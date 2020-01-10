@@ -1,0 +1,8 @@
+ {%for tweet in posts%}
+  <table class="table table-striped">
+      <th scope="row">{{tweet.tweet}}</th>
+      <a href='/tweet/{{tweet._id}}'>Editer</a>
+      <tr>{{tweet.user.name}}</tr>
+      <tr>{{tweet.date | date("m/d/Y")}}</tr>
+  </table>
+  {%endfor%}

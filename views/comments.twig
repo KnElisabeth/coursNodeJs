@@ -1,0 +1,14 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+
+{%for comment in comments%}
+    <div>
+        {{comment.tweet}}
+    </div>
+    <div>
+        {{comment.date | date('d/m/Y')}}
+    </div>
+{%endfor%}
+
+{% endblock %}

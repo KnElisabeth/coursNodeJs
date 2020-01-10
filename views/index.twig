@@ -1,0 +1,39 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+
+  <h1>{{title}}</h1>
+
+  {% if user.name %}
+  <a href='/users/logout'>Se Déconnecter</a>
+  {% else %}
+  <a href='/users/login'>Se Connecter</a>
+  {% endif %}
+  <br>
+  <br>
+  <label>Rechercher</label>
+  <input type='name' id='search'>
+  <br>
+  <br>
+
+  <div id='container'>
+  {# la div nous sert uniquement à identifier l'objet pour l'affichage du search #}
+    {% for tweet in posts %}
+    <table class="table table-striped">
+        <th scope="row">{{tweet.tweet}}</th>
+        <a href='/tweet/{{tweet._id}}'>Editer</a>
+        <tr>{{tweet.user.name}}</tr>
+        <tr>{{tweet.date | date("m/d/Y")}}</tr>
+        <a href="/tweet/{{tweet._id}}/comments" class="card-link">Commentaire</a>
+    </table>
+    {% endfor %}
+  </div>
+
+  <form action="" id="formTweet" method="" >
+    <label for="tweet">Créer un tweet</label>
+    <textarea name='tweet' id='tweet' cols='30', rows ='2'>
+    </textarea>
+    <button>Twitter</button>
+  </form>
+
+{% endblock %}

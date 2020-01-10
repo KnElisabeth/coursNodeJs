@@ -1,0 +1,14 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+
+  <h1>Modifier mon Tweet</h1>
+  <form action="" id="editTweet" method="" >
+    <textarea>{{theTweet.tweet}}</textarea>
+    <p>{{theTweet.user.name}}</p>
+    <p>{{theTweet.date}}</p>
+    <button type='submit'>Modifier</button>
+  </form>
+
+
+{% endblock %}

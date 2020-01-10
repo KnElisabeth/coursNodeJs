@@ -1,0 +1,21 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+
+  <h1>Authentification</h1>
+  
+  <form action="" method="POST" >
+  {# par défaut il conservera la même url pour l'action, cf ma route #}
+    <label>Nom</label>
+    <input name="name" type="text">
+
+    <label>Email</label>
+    <input name="email" type="email">
+
+    <label>Mot de Passe</label>
+    <input name="password" type="password">
+
+    <button type='submit' id='userForm'>Se Connecter</button>
+  </form>
+
+{% endblock %}
